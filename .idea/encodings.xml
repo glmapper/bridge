@@ -3,9 +3,9 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/.glmapper/formatter.xml" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/bradge-protocol" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bridge-client" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bridge-core" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bridge-protocol" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bridge-server" charset="UTF-8" />
   </component>
 </project>
