@@ -1,4 +1,9 @@
 .classpath
 org.eclipse.m2e.core.prefs
 
+.idea/
 
+/target
+target/
+
+*.log*
