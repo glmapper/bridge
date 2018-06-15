@@ -8,7 +8,7 @@
     <artifactId>bridge</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>bradge-protocol</module>
+        <module>bridge-protocol</module>
         <module>bridge-core</module>
         <module>bridge-server</module>
         <module>bridge-client</module>
