@@ -9,14 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>bridge-protocol</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>bridge-chief</artifactId>
 
-    <name>bridge-client</name>
-    <modules>
-        <module>bridge-protocol-api</module>
-        <module>bridge-protocol-bridge</module>
-        <module>bridge-protocol-rest</module>
-        <module>bridge-protocol-hessian</module>
-    </modules>
+
 </project>

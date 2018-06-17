@@ -9,14 +9,13 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>bridge-protocol</artifactId>
+    <artifactId>bridge-registry</artifactId>
     <packaging>pom</packaging>
-
-    <name>bridge-client</name>
     <modules>
-        <module>bridge-protocol-api</module>
-        <module>bridge-protocol-bridge</module>
-        <module>bridge-protocol-rest</module>
-        <module>bridge-protocol-hessian</module>
+        <module>bridge-registry-api</module>
+        <module>bridge-registry-zookeeper</module>
+        <module>bridge-registry-redis</module>
     </modules>
+
+
 </project>

@@ -10,8 +10,12 @@
     <modules>
         <module>bridge-protocol</module>
         <module>bridge-core</module>
-        <module>bridge-server</module>
-        <module>bridge-client</module>
+        <module>bridge-filter</module>
+        <module>bridge-serialization</module>
+        <module>bridge-chief</module>
+        <module>bridge-registry</module>
+        <module>bridge-demo</module>
+        <module>bridge-config</module>
     </modules>
 
     <packaging>pom</packaging>
