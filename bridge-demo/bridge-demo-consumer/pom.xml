@@ -11,5 +11,12 @@
 
     <artifactId>bridge-demo-consumer</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.glmapper</groupId>
+            <artifactId>bridge-demo-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
 
 </project>
