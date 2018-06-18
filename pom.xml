@@ -16,6 +16,7 @@
         <module>bridge-registry</module>
         <module>bridge-demo</module>
         <module>bridge-config</module>
+        <module>bridge-transport</module>
     </modules>
 
     <packaging>pom</packaging>
