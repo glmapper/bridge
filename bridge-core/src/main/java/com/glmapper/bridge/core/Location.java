@@ -5,8 +5,7 @@ import java.io.Serializable;
 /**
  * 定位信息
  *
- * @email: <a href="sunzhenyu@terminus.io">孙振宇</a>
- * @author: ginkgo
+ * @author: Jerry
  * @date: 2018/6/17
  */
 public class Location implements Serializable {

@@ -3,8 +3,7 @@ package com.glmapper.bridge.core.extension;
 /**
  * 扩展加载器，SPI 机制
  *
- * @email: <a href="sunzhenyu@terminus.io">孙振宇</a>
- * @author: ginkgo
+ * @author: Jerry
  * @date: 2018/6/18
  */
 public class ExtensionLoader {

@@ -3,8 +3,7 @@ package com.glmapper.bridge.core;
 /**
  * 常量
  *
- * @email: <a href="sunzhenyu@terminus.io">孙振宇</a>
- * @author: ginkgo
+ * @author: Jerry
  * @date: 2018/6/18
  */
 public final class Constants {
