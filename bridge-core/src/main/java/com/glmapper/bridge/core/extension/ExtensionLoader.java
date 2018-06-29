@@ -11,15 +11,15 @@ public class ExtensionLoader {
     /**
      * 通用的加载扩展服务的目录
      */
-    private static final String SERVICES_DIRECTORY = "META-INF/services/";
+    private static final String SERVICES_DIRECTORY        = "META-INF/services/";
 
     /**
      * bridge 特有的加载扩展服务的目录
      */
-    private static final String BRIDGE_DIRECTORY = "META-INF/bridge/";
+    private static final String BRIDGE_DIRECTORY          = "META-INF/bridge/";
 
     /**
-     * bridge 内置的服务所在目录
+     * bridge 内置的服务所在目�?
      */
     private static final String BRIDGE_INTERNAL_DIRECTORY = BRIDGE_DIRECTORY + "internal/";
 }

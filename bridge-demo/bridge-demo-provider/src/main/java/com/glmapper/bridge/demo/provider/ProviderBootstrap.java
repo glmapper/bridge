@@ -23,7 +23,7 @@ public class ProviderBootstrap {
     private static final Logger logger = LoggerFactory.getLogger(ProviderBootstrap.class);
 
     @Autowired
-    private HelloService helloService;
+    private HelloService        helloService;
 
     public static void main(String[] args) throws IOException {
         ConfigurableApplicationContext applicationContext = SpringApplication.run(ProviderBootstrap.class, args);
