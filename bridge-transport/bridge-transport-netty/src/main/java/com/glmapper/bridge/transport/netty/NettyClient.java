@@ -21,9 +21,11 @@ public class NettyClient {
 
     public static void main(String[] args) throws Exception {
 
-        // Configure the client.
+        //客户端的Bootstrap一般用一个EventLoopGroup
         EventLoopGroup group = new NioEventLoopGroup();
         try {
+            //Bootstrap主要作用是配置整个Netty程序，串联起各个组件。
+
             Bootstrap b = new Bootstrap();
             b.group(group)
                     .channel(NioSocketChannel.class)
@@ -38,6 +40,7 @@ public class NettyClient {
                         }
                     });
 
+            //Bootstrap用于Client端，需要调用connect()方法来连接服务器端，但我们也可以通过调用bind()方法返回的ChannelFuture中获取Channel去connect服务器端。
             ChannelFuture future = b.connect(HOST, PORT).sync();
             future.channel().writeAndFlush("Hello Netty Server ,I am a common client");
             future.channel().closeFuture().sync();

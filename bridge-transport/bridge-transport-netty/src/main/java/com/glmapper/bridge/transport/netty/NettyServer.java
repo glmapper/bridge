@@ -8,6 +8,8 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
+import io.netty.handler.codec.DelimiterBasedFrameDecoder;
+import io.netty.handler.codec.Delimiters;
 import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
 
@@ -26,14 +28,21 @@ public class NettyServer {
     }
 
     public void start(){
+        /**
+         * 如果一个ServerBootstrap有两个EventLoopGroup，
+         * 那么就可以把第一个EventLoopGroup用来专门负责绑定到端口监听连接事件，
+         * 而把第二个EventLoopGroup用来处理每个接收到的连接，
+         */
+        //而服务器端的ServerBootstrap会用到两个（这两个也可以是同一个实例）
         EventLoopGroup bossGroup = new NioEventLoopGroup(1);
         EventLoopGroup workerGroup = new NioEventLoopGroup();
         try {
+            //ServerBootstrap用于Server端，通过调用bind()方法来绑定到一个端口监听连接
             ServerBootstrap sbs = new ServerBootstrap().group(bossGroup,workerGroup).channel(NioServerSocketChannel.class).localAddress(new InetSocketAddress(port))
                     .childHandler(new ChannelInitializer<SocketChannel>() {
 
                         protected void initChannel(SocketChannel ch) throws Exception {
-//                            ch.pipeline().addLast("framer", new DelimiterBasedFrameDecoder(8192, Delimiters.lineDelimiter()));
+                            ch.pipeline().addLast("framer", new DelimiterBasedFrameDecoder(8192, Delimiters.lineDelimiter()));
                             ch.pipeline().addLast("decoder", new StringDecoder());
                             ch.pipeline().addLast("encoder", new StringEncoder());
                             ch.pipeline().addLast(new NettyServerHandler());
@@ -61,4 +70,5 @@ public class NettyServer {
         }
         new NettyServer(port).start();
     }
+
 }
