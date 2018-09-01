@@ -10,12 +10,6 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>bridge-registry</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>bridge-registry-api</module>
-        <module>bridge-registry-zookeeper</module>
-        <module>bridge-registry-redis</module>
-    </modules>
 
 
 </project>
