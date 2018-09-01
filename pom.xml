@@ -13,6 +13,7 @@
         <module>bridge-demo</module>
         <module>bridge-proxy</module>
         <module>bridge-manager</module>
+        <module>bridge-registry</module>
     </modules>
 
     <packaging>pom</packaging>
