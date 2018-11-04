@@ -8,15 +8,9 @@
     <artifactId>bridge</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>bridge-protocol</module>
-        <module>bridge-core</module>
-        <module>bridge-filter</module>
-        <module>bridge-serialization</module>
-        <module>bridge-chief</module>
-        <module>bridge-registry</module>
-        <module>bridge-demo</module>
-        <module>bridge-config</module>
-        <module>bridge-transport</module>
+        <module>bridge-common</module>
+        <module>bridge-client</module>
+        <module>bridge-server</module>
     </modules>
 
     <packaging>pom</packaging>
