@@ -46,43 +46,43 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class BridgeUrl implements Serializable {
 
-    private static final long serialVersionUID = -1985165475234910535L;
+    private static final long                         serialVersionUID = -1985165475234910535L;
 
-    private final String protocol;
+    private final String                              protocol;
 
-    private final String username;
+    private final String                              username;
 
-    private final String password;
+    private final String                              password;
 
     /**
      * server host to registry
      */
-    private final String host;
+    private final String                              host;
 
     /**
      * server port to registry
      */
-    private final int port;
+    private final int                                 port;
 
-    private final String path;
+    private final String                              path;
 
-    private final Map<String, String> parameters;
+    private final Map<String, String>                 parameters;
 
     // ==== cache ====
 
-    private volatile transient Map<String, Number> numbers;
+    private volatile transient Map<String, Number>    numbers;
 
     private volatile transient Map<String, BridgeUrl> urls;
 
-    private volatile transient String ip;
+    private volatile transient String                 ip;
 
-    private volatile transient String full;
+    private volatile transient String                 full;
 
-    private volatile transient String identity;
+    private volatile transient String                 identity;
 
-    private volatile transient String parameter;
+    private volatile transient String                 parameter;
 
-    private volatile transient String string;
+    private volatile transient String                 string;
 
     protected BridgeUrl() {
         this.protocol = null;
@@ -122,7 +122,8 @@ public class BridgeUrl implements Serializable {
         this(protocol, username, password, host, port, path, (Map<String, String>) null);
     }
 
-    public BridgeUrl(String protocol, String username, String password, String host, int port, String path, String... pairs) {
+    public BridgeUrl(String protocol, String username, String password, String host, int port, String path,
+                     String... pairs) {
         this(protocol, username, password, host, port, path, CollectionUtils.toStringMap(pairs));
     }
 
@@ -285,11 +286,11 @@ public class BridgeUrl implements Serializable {
 
     public String getAuthority() {
         if ((username == null || username.length() == 0)
-                && (password == null || password.length() == 0)) {
+            && (password == null || password.length() == 0)) {
             return null;
         }
         return (username == null ? "" : username)
-                + ":" + (password == null ? "" : password);
+            + ":" + (password == null ? "" : password);
     }
 
     public String getHost() {
@@ -374,7 +375,7 @@ public class BridgeUrl implements Serializable {
 
     private String appendDefaultPort(String address, int defaultPort) {
         if (address != null && address.length() > 0
-                && defaultPort > 0) {
+            && defaultPort > 0) {
             int i = address.indexOf(':');
             if (i < 0) {
                 return address + ":" + defaultPort;
@@ -924,7 +925,7 @@ public class BridgeUrl implements Serializable {
 
     public BridgeUrl addParameter(String key, String value) {
         if (key == null || key.length() == 0
-                || value == null || value.length() == 0) {
+            || value == null || value.length() == 0) {
             return this;
         }
         // if value doesn't change, return immediately
@@ -939,7 +940,7 @@ public class BridgeUrl implements Serializable {
 
     public BridgeUrl addParameterIfAbsent(String key, String value) {
         if (key == null || key.length() == 0
-                || value == null || value.length() == 0) {
+            || value == null || value.length() == 0) {
             return this;
         }
         if (hasParameter(key)) {
@@ -1010,12 +1011,12 @@ public class BridgeUrl implements Serializable {
         return addParameters(map);
     }
 
-//    public BridgeUrl addParameterString(String query) {
-//        if (query == null || query.length() == 0) {
-//            return this;
-//        }
-//        return addParameters(StringUtils.parseQueryString(query));
-//    }
+    //    public BridgeUrl addParameterString(String query) {
+    //        if (query == null || query.length() == 0) {
+    //            return this;
+    //        }
+    //        return addParameters(StringUtils.parseQueryString(query));
+    //    }
 
     public BridgeUrl removeParameter(String key) {
         if (key == null || key.length() == 0) {
@@ -1147,7 +1148,7 @@ public class BridgeUrl implements Serializable {
             boolean first = true;
             for (Map.Entry<String, String> entry : new TreeMap<String, String>(getParameters()).entrySet()) {
                 if (entry.getKey() != null && entry.getKey().length() > 0
-                        && (includes == null || includes.contains(entry.getKey()))) {
+                    && (includes == null || includes.contains(entry.getKey()))) {
                     if (first) {
                         if (concat) {
                             buf.append("?");
@@ -1168,7 +1169,8 @@ public class BridgeUrl implements Serializable {
         return buildString(appendUser, appendParameter, false, false, parameters);
     }
 
-    private String buildString(boolean appendUser, boolean appendParameter, boolean useIP, boolean useService, String... parameters) {
+    private String buildString(boolean appendUser, boolean appendParameter, boolean useIP, boolean useService,
+                               String... parameters) {
         StringBuilder buf = new StringBuilder();
         if (protocol != null && protocol.length() > 0) {
             buf.append(protocol);

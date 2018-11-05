@@ -3,7 +3,6 @@ package com.glmapper.bridge.common;
 import java.io.Serializable;
 import java.util.Map;
 
-
 /**
  * RPC invoke result. (API, Prototype, NonThreadSafe)
  *
