@@ -19,25 +19,25 @@ import java.io.Serializable;
  * @date 2018/11/4
  */
 public class ClientBean<T> implements FactoryBean, ApplicationContextAware,
-        InitializingBean, DisposableBean, Serializable {
+                           InitializingBean, DisposableBean, Serializable {
 
-    private static final long serialVersionUID = -3946021378087142449L;
+    private static final long             serialVersionUID = -3946021378087142449L;
 
-    private static final ProxyFactory proxyFactory = new JdkProxyFactory();
+    private static final ProxyFactory     proxyFactory     = new JdkProxyFactory();
 
-    private ApplicationContext applicationContext;
+    private ApplicationContext            applicationContext;
 
-    private String interfaceName;
+    private String                        interfaceName;
 
-    private Class<?> interfaceClass;
+    private Class<?>                      interfaceClass;
 
-    private transient volatile T clientBean;
+    private transient volatile T          clientBean;
 
     private transient volatile Invoker<T> invoker;
 
-    private transient volatile boolean destroyed;
+    private transient volatile boolean    destroyed;
 
-    private transient volatile boolean initialized;
+    private transient volatile boolean    initialized;
 
     @Override
     public Object getObject() throws Exception {
@@ -89,7 +89,7 @@ public class ClientBean<T> implements FactoryBean, ApplicationContextAware,
         }
         try {
             interfaceClass = Class.forName(interfaceName, true, Thread.currentThread()
-                    .getContextClassLoader());
+                .getContextClassLoader());
         } catch (ClassNotFoundException e) {
             throw new IllegalStateException(e.getMessage(), e);
         }

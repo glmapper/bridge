@@ -1,6 +1,5 @@
 package com.glmapper.bridge.common.util;
 
-
 import com.glmapper.bridge.common.BridgeUrl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,21 +16,22 @@ import java.util.regex.Pattern;
  */
 public class NetUtils {
 
-    public static final String LOCALHOST = "127.0.0.1";
-    public static final String ANY_HOST = "0.0.0.0";
-    private static final Logger logger = LoggerFactory.getLogger(NetUtils.class);
-    private static final int RND_PORT_START = 30000;
+    public static final String               LOCALHOST        = "127.0.0.1";
+    public static final String               ANY_HOST         = "0.0.0.0";
+    private static final Logger              logger           = LoggerFactory.getLogger(NetUtils.class);
+    private static final int                 RND_PORT_START   = 30000;
 
-    private static final int RND_PORT_RANGE = 10000;
+    private static final int                 RND_PORT_RANGE   = 10000;
 
-    private static final Random RANDOM = new Random(System.currentTimeMillis());
-    private static final int MIN_PORT = 0;
-    private static final int MAX_PORT = 65535;
-    private static final Pattern ADDRESS_PATTERN = Pattern.compile("^\\d{1,3}(\\.\\d{1,3}){3}\\:\\d{1,5}$");
-    private static final Pattern LOCAL_IP_PATTERN = Pattern.compile("127(\\.\\d{1,3}){3}$");
-    private static final Pattern IP_PATTERN = Pattern.compile("\\d{1,3}(\\.\\d{1,3}){3,5}$");
-    private static final Map<String, String> hostNameCache = new LRUCache<String, String>(1000);
-    private static volatile InetAddress LOCAL_ADDRESS = null;
+    private static final Random              RANDOM           = new Random(System.currentTimeMillis());
+    private static final int                 MIN_PORT         = 0;
+    private static final int                 MAX_PORT         = 65535;
+    private static final Pattern             ADDRESS_PATTERN  = Pattern
+                                                                  .compile("^\\d{1,3}(\\.\\d{1,3}){3}\\:\\d{1,5}$");
+    private static final Pattern             LOCAL_IP_PATTERN = Pattern.compile("127(\\.\\d{1,3}){3}$");
+    private static final Pattern             IP_PATTERN       = Pattern.compile("\\d{1,3}(\\.\\d{1,3}){3,5}$");
+    private static final Map<String, String> hostNameCache    = new LRUCache<String, String>(1000);
+    private static volatile InetAddress      LOCAL_ADDRESS    = null;
 
     public static int getRandomPort() {
         return RND_PORT_START + RANDOM.nextInt(RND_PORT_RANGE);
@@ -88,8 +88,8 @@ public class NetUtils {
 
     public static boolean isLocalHost(String host) {
         return host != null
-                && (LOCAL_IP_PATTERN.matcher(host).matches()
-                || host.equalsIgnoreCase("localhost"));
+            && (LOCAL_IP_PATTERN.matcher(host).matches()
+            || host.equalsIgnoreCase("localhost"));
     }
 
     public static boolean isAnyHost(String host) {
@@ -98,10 +98,10 @@ public class NetUtils {
 
     public static boolean isInvalidLocalHost(String host) {
         return host == null
-                || host.length() == 0
-                || host.equalsIgnoreCase("localhost")
-                || host.equals("0.0.0.0")
-                || (LOCAL_IP_PATTERN.matcher(host).matches());
+            || host.length() == 0
+            || host.equalsIgnoreCase("localhost")
+            || host.equals("0.0.0.0")
+            || (LOCAL_IP_PATTERN.matcher(host).matches());
     }
 
     public static boolean isValidLocalHost(String host) {
@@ -110,7 +110,7 @@ public class NetUtils {
 
     public static InetSocketAddress getLocalSocketAddress(String host, int port) {
         return isInvalidLocalHost(host) ?
-                new InetSocketAddress(port) : new InetSocketAddress(host, port);
+            new InetSocketAddress(port) : new InetSocketAddress(host, port);
     }
 
     static boolean isValidAddress(InetAddress address) {
@@ -119,9 +119,9 @@ public class NetUtils {
         }
         String name = address.getHostAddress();
         return (name != null
-                && !ANY_HOST.equals(name)
-                && !LOCALHOST.equals(name)
-                && IP_PATTERN.matcher(name).matches());
+            && !ANY_HOST.equals(name)
+            && !LOCALHOST.equals(name)
+            && IP_PATTERN.matcher(name).matches());
     }
 
     /**

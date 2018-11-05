@@ -18,7 +18,6 @@ public interface ProxyFactory {
      */
     <T> T getProxy(Invoker<T> invoker);
 
-
     /**
      *
      * @param proxy
