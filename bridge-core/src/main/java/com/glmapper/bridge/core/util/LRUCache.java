@@ -1,4 +1,4 @@
-package com.glmapper.bridge.common.util;
+package com.glmapper.bridge.core.util;
 
 import java.util.LinkedHashMap;
 import java.util.concurrent.locks.Lock;

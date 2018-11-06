@@ -1,7 +1,7 @@
-package com.glmapper.bridge.common;
+package com.glmapper.bridge.core;
 
-import com.glmapper.bridge.common.util.CollectionUtils;
-import com.glmapper.bridge.common.util.NetUtils;
+import com.glmapper.bridge.core.util.CollectionUtils;
+import com.glmapper.bridge.core.util.NetUtils;
 
 import java.io.Serializable;
 import java.io.UnsupportedEncodingException;

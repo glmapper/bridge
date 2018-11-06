@@ -8,9 +8,9 @@
     <artifactId>bridge</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>bridge-common</module>
         <module>bridge-client</module>
         <module>bridge-server</module>
+        <module>bridge-core</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -69,7 +69,7 @@
             </dependency>
             <dependency>
                 <groupId>com.glmapper</groupId>
-                <artifactId>bridge-common</artifactId>
+                <artifactId>bridge-core</artifactId>
                 <version>${bridge.version}</version>
             </dependency>
             <dependency>

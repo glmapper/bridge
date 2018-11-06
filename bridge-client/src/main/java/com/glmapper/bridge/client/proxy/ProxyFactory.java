@@ -1,7 +1,7 @@
 package com.glmapper.bridge.client.proxy;
 
-import com.glmapper.bridge.common.BridgeUrl;
-import com.glmapper.bridge.common.Invoker;
+import com.glmapper.bridge.core.BridgeUrl;
+import com.glmapper.bridge.core.Invoker;
 
 /**
  * ProxyFactory

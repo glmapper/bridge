@@ -1,4 +1,4 @@
-package com.glmapper.bridge.common;
+package com.glmapper.bridge.core;
 
 import java.io.Serializable;
 import java.util.Map;

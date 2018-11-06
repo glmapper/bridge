@@ -2,7 +2,7 @@ package com.glmapper.bridge.client;
 
 import com.glmapper.bridge.client.proxy.JdkProxyFactory;
 import com.glmapper.bridge.client.proxy.ProxyFactory;
-import com.glmapper.bridge.common.Invoker;
+import com.glmapper.bridge.core.Invoker;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.FactoryBean;

@@ -1,6 +1,6 @@
-package com.glmapper.bridge.common.util;
+package com.glmapper.bridge.core.util;
 
-import com.glmapper.bridge.common.BridgeUrl;
+import com.glmapper.bridge.core.BridgeUrl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

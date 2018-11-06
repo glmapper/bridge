@@ -1,4 +1,4 @@
-package com.glmapper.bridge.common;
+package com.glmapper.bridge.core;
 
 import java.util.concurrent.ExecutorService;
 import java.util.regex.Pattern;

@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.glmapper.bridge.common;
+package com.glmapper.bridge.core;
 
 /**
  * Node. (API/SPI, Prototype, ThreadSafe)
